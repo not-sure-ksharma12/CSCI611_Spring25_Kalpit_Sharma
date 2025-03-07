@@ -1,0 +1,4 @@
+train: /Users/kalpit//611/road_sign_database/train/images
+val: /Users/kalpit//611/road_sign_database/val/images
+nc: 4
+names: ['stop_sign', 'speed_limit', 'crosswalk', 'traffic_light']
