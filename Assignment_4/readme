@@ -1,0 +1,52 @@
+Overview
+
+This project implements Neural Style Transfer (NST) using the VGG19 model in PyTorch. NST blends the artistic style of one image with the content of another by optimizing a target image. The implementation allows experimenting with different hyperparameters, including learning rate, content weight, and style weight.
+
+Requirements
+
+Ensure you have the following dependencies installed:
+pip install torch torchvision matplotlib numpy
+
+Usage
+
+1. Load and Preprocess Images
+
+Place your content and style images in the project directory.
+
+Load them using the provided helper functions to preprocess them into tensors suitable for the VGG19 model.
+
+2. Run the Script
+
+Modify and execute the script with different hyperparameters:
+# Define hyperparameter settings
+experiments = [
+    {"lr": 0.003, "alpha": 1e5, "beta": 1e6, "steps": 2000},
+    {"lr": 0.001, "alpha": 1e4, "beta": 1e5, "steps": 1500},
+    {"lr": 0.005, "alpha": 1e5, "beta": 5e6, "steps": 2500},
+]
+
+Run the script to optimize the target image:
+python neural_style_transfer.py
+
+3. Visualizing Results
+
+The script displays intermediate results every 400 steps and saves the final output image.
+
+4. Modifying Hyperparameters
+
+To experiment with different style and content influences, adjust the alpha and beta values:
+
+Higher alpha preserves more content details.
+
+Higher beta applies more artistic style.
+
+Adjust lr for stable convergence.
+
+Results & Observations
+
+Style transfer quality improves with higher iteration steps (e.g., 2000+ steps).
+
+Higher style weight (beta) enhances artistic transfer but can distort content.
+
+A lower learning rate provides smoother optimization but requires more iterations.
+
